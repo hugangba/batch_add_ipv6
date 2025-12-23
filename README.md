@@ -29,7 +29,7 @@
 sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -c 100
 
 # 指定接口（如 wg0、eth0、lo 等）
-sudo python3 batch_add_ipv6.py -p 2001:470:8935:3:3::/64 -c 10 -i wg0
+sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -c 10 -i wg0
 
 # 从指定编号开始添加
 sudo python3 batch_add_ipv6.py -p 2001:db8::/64 -s 1000 -c 50 -i eth0
@@ -38,7 +38,7 @@ sudo python3 batch_add_ipv6.py -p 2001:db8::/64 -s 1000 -c 50 -i eth0
 python3 batch_add_ipv6.py -p 2001:db8::/64 -c 5 --dry-run
 
 # 删除该前缀下所有已添加的地址：
-sudo python3 batch_add_ipv6.py -p 2001:470:8935:3:3::/64 -i wg0 --remove
+sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -i wg0 --remove
 
 # 参数说明
 参数,简称,必填,默认值,说明
