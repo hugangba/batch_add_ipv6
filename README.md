@@ -99,7 +99,7 @@ sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -i wg0 --remove
 
 
 # 注意事项
-如果你的前缀写成 2001:db8:abcd:3::/64 或 2001:db8:abcd:5::/64（主机位非零），脚本会自动规范为 2001:db8:abcd::/64，并提示说明。<br>
+如果你的前缀写成 2001:db8:abcd:abcd:3::/64 或 2001:db8:abcd:abcd:5::/64（主机位非零），脚本会自动规范为 2001:db8:abcd:abcd::/64，并提示说明。<br>
 添加到 lo（loopback）接口是一种常见技巧，配合 sysctl net.ipv6.ip_nonlocal_bind=1 可实现无需实际路由即可绑定任意子网内地址（推荐用于 rinetd 等工具）。<br>
 添加过多地址（>1000）可能略微影响系统性能，请根据实际需求控制数量。<br>
 在 LXC 容器中运行时，确保容器具有 CAP_NET_ADMIN 权限。<br>
