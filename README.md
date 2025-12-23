@@ -41,19 +41,19 @@ python3 batch_add_ipv6.py -p 2001:db8::/64 -c 5 --dry-run
 sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -i wg0 --remove
 
 # 参数说明
-参数,简称,必填,默认值,说明
---prefix,-p,是,无,IPv6 子网前缀，例如 2001:db8::/64 或 2001:db8:1:2::/64
---interface,-i,否,eth0,目标网络接口名（如 eth0、wg0、lo）
---start,-s,否,1,起始主机编号（生成 ::1、::2 ...）
---count,-c,否,100,要添加的地址数量
---dry-run,,否,无,仅显示命令，不实际执行
---remove,,否,无,删除该前缀下接口上所有 IPv6 地址
+参数,简称,必填,默认值,说明<br>
+--prefix,-p,是,无,IPv6 子网前缀，例如 2001:db8::/64 或 2001:db8:1:2::/64<br>
+--interface,-i,否,eth0,目标网络接口名（如 eth0、wg0、lo）<br>
+--start,-s,否,1,起始主机编号（生成 ::1、::2 ...）<br>
+--count,-c,否,100,要添加的地址数量<br>
+--dry-run,,否,无,仅显示命令，不实际执行<br>
+--remove,,否,无,删除该前缀下接口上所有 IPv6 地址<br>
 
 # 注意事项
-如果你的前缀写成 2001:db8:abcd:3::/64 或 2001:db8:abcd:5::/64（主机位非零），脚本会自动规范为 2001:db8:abcd::/64，并提示说明。
-添加到 lo（loopback）接口是一种常见技巧，配合 sysctl net.ipv6.ip_nonlocal_bind=1 可实现无需实际路由即可绑定任意子网内地址（推荐用于 rinetd 等工具）。
-添加过多地址（>1000）可能略微影响系统性能，请根据实际需求控制数量。
-在 LXC 容器中运行时，确保容器具有 CAP_NET_ADMIN 权限。
+如果你的前缀写成 2001:db8:abcd:3::/64 或 2001:db8:abcd:5::/64（主机位非零），脚本会自动规范为 2001:db8:abcd::/64，并提示说明。<br>
+添加到 lo（loopback）接口是一种常见技巧，配合 sysctl net.ipv6.ip_nonlocal_bind=1 可实现无需实际路由即可绑定任意子网内地址（推荐用于 rinetd 等工具）。<br>
+添加过多地址（>1000）可能略微影响系统性能，请根据实际需求控制数量。<br>
+在 LXC 容器中运行时，确保容器具有 CAP_NET_ADMIN 权限。<br>
 
 # 许可证
 MIT License - 可自由使用、修改和分发。
