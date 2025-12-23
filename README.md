@@ -41,13 +41,62 @@ python3 batch_add_ipv6.py -p 2001:db8::/64 -c 5 --dry-run
 sudo python3 batch_add_ipv6.py -p 2001:db8:abcd:1234::/64 -i wg0 --remove
 
 # 参数说明
-参数,简称,必填,默认值,说明<br>
---prefix,-p,是,无,IPv6 子网前缀，例如 2001:db8::/64 或 2001:db8:1:2::/64<br>
---interface,-i,否,eth0,目标网络接口名（如 eth0、wg0、lo）<br>
---start,-s,否,1,起始主机编号（生成 ::1、::2 ...）<br>
---count,-c,否,100,要添加的地址数量<br>
---dry-run,,否,无,仅显示命令，不实际执行<br>
---remove,,否,无,删除该前缀下接口上所有 IPv6 地址<br>
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>简称</th>
+      <th>必填</th>
+      <th>默认值</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>--prefix</td>
+      <td>-p</td>
+      <td>是</td>
+      <td>无</td>
+      <td>IPv6 子网前缀，例如 2001:db8::/64 或 2001:db8:1:2::/64</td>
+    </tr>
+    <tr>
+      <td>--interface</td>
+      <td>-i</td>
+      <td>否</td>
+      <td>eth0</td>
+      <td>目标网络接口名（如 eth0、wg0、lo）</td>
+    </tr>
+    <tr>
+      <td>--start</td>
+      <td>-s</td>
+      <td>否</td>
+      <td>1</td>
+      <td>起始主机编号（生成 ::1、::2 ...）</td>
+    </tr>
+    <tr>
+      <td>--count</td>
+      <td>-c</td>
+      <td>否</td>
+      <td>100</td>
+      <td>要添加的地址数量</td>
+    </tr>
+    <tr>
+      <td>--dry-run</td>
+      <td></td>
+      <td>否</td>
+      <td>无</td>
+      <td>仅显示命令，不实际执行</td>
+    </tr>
+    <tr>
+      <td>--remove</td>
+      <td></td>
+      <td>否</td>
+      <td>无</td>
+      <td>删除该前缀下接口上所有 IPv6 地址</td>
+    </tr>
+  </tbody>
+</table>
+
 
 # 注意事项
 如果你的前缀写成 2001:db8:abcd:3::/64 或 2001:db8:abcd:5::/64（主机位非零），脚本会自动规范为 2001:db8:abcd::/64，并提示说明。<br>
